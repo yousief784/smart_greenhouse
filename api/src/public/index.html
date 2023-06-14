@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello!</title>
+    <form method="post">
+      <input type="text" placeholder="message" id="message" />
+      <button type="submit">Submit</button>
+    </form>
+  </head>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+    $("form").submit(() => {
+      socket.emit("message", "Value from submiting");
+    });
+  </script>
+  <body>
+    Integrating Socket.io with Node.js and Express
+  </body>
+</html>
